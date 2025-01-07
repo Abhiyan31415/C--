@@ -7,22 +7,31 @@ class Stack{
     
     public:
     Stack(){
-        top=0;
+        top=-1;
     }
     void push(int num){
-
+        if (top >= 9) {
+            cout << "Stack Overflow!" << endl;
+            return;
+        }
         data[top]=num;
         top++;
 
     }
     void pop(){
+        if (top == -1) {
+            cout << "Stack Underflow!" << endl;
+            return;
+        }
         data[top]=0;
         top--;
     }
     int topp(){
+        if(top==-1) return -1;
         return data[top];
     }
     int size(){
+                if(top=-1) return -1;
         return top+1;
     }
     void display(){
