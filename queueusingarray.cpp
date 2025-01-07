@@ -11,18 +11,22 @@ class Queue{
             rear=0;
         }
         void push(int num){
+            if( front >= 9) return ;
             front++;
             data[front]=num;
             cout<<num<<" pushed"<<endl;
         }
         void pop(){
-            if(rear<=front) return;
+            
+            if(rear>front) return;
+                        cout<<data[rear]<<"popped"<<endl;
             data[rear]=0;
             rear++;
 
         }
         int top(){
-            return data[front];
+            
+            return data[rear];
         }
         int size(){
             return front-rear+1;
@@ -30,13 +34,12 @@ class Queue{
 };
 int main(){
     Queue q;
-    q.push(5);    q.push(5);
-    q.push(5);
-    q.push(5);
-
-
+    q.push(1);    q.push(2);
+    q.push(3);
+    q.pop();
+    q.push(4);
     int a=q.top();
-    cout<<"the top is:"<<a;
+    cout<<"the top is:"<<a<<endl;
     int size=q.size();
     cout<<"it is "<<size<<endl;
     return 0;
