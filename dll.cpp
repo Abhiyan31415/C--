@@ -31,6 +31,7 @@ Node *arrtodll(vector<int> &a)
 }
 void printdll(Node *head)
 {
+     cout << "__Forward direction________________________________________________" << endl;
     Node *temp = head;
     while (temp->next)
     {
@@ -38,13 +39,13 @@ void printdll(Node *head)
         temp = temp->next;
     }
     cout << temp->data << endl;
-    cout << "__Forward direction________________________________________________" << endl;
-    while (temp)
-    {
-        cout << temp->data << endl;
-        temp = temp->prev;
-    }
-    cout << "___Reverese Direction_______________________________________________" << endl;
+   
+    // while (temp)
+    // {
+    //     cout << temp->data << endl;
+    //     temp = temp->prev;
+    // }
+    // cout << "___Reverese Direction_______________________________________________" << endl;
 }
 Node *removehead(Node *head)
 {
